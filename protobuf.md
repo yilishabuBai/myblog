@@ -101,4 +101,27 @@ browserify ./proto/exports.js > ./proto/bundle.js
 
 会在proto目录下生成bundle.js，这也就是最终使用的js文件。
 
-配置protobuf的步骤已经完成，了解之后就可以按照项目的接口需求进行proto文件的编写了。
+# protobuf使用示例
+
+### js中使用
+
+```html
+<script src="./proto/bundle.js"></script>
+<script type="text/javascript">
+    var login = new proto.LoginC2S();
+    login.setUsername('伊丽莎不白');
+    login.setPassword('123');
+
+    var bytes = login.serializeBinary();
+    console.log('格式化为字节', bytes);
+
+    var data = new proto.LoginC2S.deserializeBinary(bytes);
+    console.log('解析为对象', data);
+    console.log('从对象中获取用户名', data.getUsername());
+    console.log('对象转化为JSON', JSON.stringify(data));
+</script>
+```
+
+# 总结
+
+到这里，protobuf的配置与使用示例就已经介绍完毕了，根据项目的情况对proto进行编写，并生成多种语言的源代码，可以极大的减少开发人员对接口数据结构定义的开发工作。同样，作为一款工具，就会有它适用的场景，经过一些简单的测试，前端应用protobuf会使项目体积增加起码200KB，对于一些轻型的前端项目仍要使用protobuf就显得不是很明智了。
