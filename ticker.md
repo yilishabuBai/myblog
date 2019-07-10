@@ -4,7 +4,7 @@
 
 先用一个思维导图来理清思路：
 
-![思维导图](https://user-gold-cdn.xitu.io/2019/7/8/16bd0729d54199e4?w=2132&h=1112&f=png&s=179326)
+![思维导图](https://github.com/yilishabuBai/myblog/blob/master/images/ticker/mind.png)
 
 ## 特点
 
